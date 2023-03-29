@@ -39,7 +39,7 @@ public class GeradoraDeFigurinhas {
         graphics.setFont(font);
         // escrever uma frase na imagem
 
-        graphics.drawString("MELHOR FILME DE FAROESTE !!!!", 0, novaaltura-100);
+        graphics.drawString("T O P - 1 0 M O V I E ", 0, novaaltura-100);
 
         // escrever a nova imagem em um arquivo
 
