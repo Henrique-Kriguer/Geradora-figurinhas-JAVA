@@ -11,15 +11,13 @@ import static java.awt.Graphics.*;
 
 public class GeradoraDeFigurinhas {
 
-    public void cria(InputStream inputStream, String nomeArquivo) throws IOException {
+    public void cria(InputStream inputStream, String nomeArquivo) throws Exception {
 
         // leitura de imagem usando a interface imputStream ( polimorfismo )
 
-       // InputStream inputStream = new FileInputStream(new File("entrada/filme.jpg"));
+        // InputStream inputStream = new FileInputStream(new File("entrada/filme.jpg"));
        BufferedImage imagemOriginal = ImageIO.read(inputStream);
-
-
-        // cria nova imagem em memoria com transparencia e com tamanho novo
+           // cria nova imagem em memoria com transparencia e com tamanho novo
 
         int largura = imagemOriginal.getWidth();
         int altura = imagemOriginal.getHeight();
@@ -39,7 +37,7 @@ public class GeradoraDeFigurinhas {
         graphics.setFont(font);
         // escrever uma frase na imagem
 
-        graphics.drawString("T O P - 1 0 M O V I E ", 0, novaaltura-100);
+        graphics.drawString("T O P -- 1 0 ", 0, novaaltura-100);
 
         // escrever a nova imagem em um arquivo
 

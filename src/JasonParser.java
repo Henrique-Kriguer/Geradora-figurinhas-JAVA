@@ -7,8 +7,8 @@ import java.util.regex.Pattern;
 
 public class JasonParser {
 
-    private static final Pattern REGEX_ITEMS = Pattern.compile(".*\\[(.+)\\].*");
-    private static final Pattern REGEX_ATRIBUTOS_JSON = Pattern.compile("\"(.+?)\":\"(.*?)\"");
+    private static final Pattern REGEX_ITEMS = Pattern.compile(".*\\[(.+)\\].*");// separa a coleção de dados dos outros atributos
+    private static final Pattern REGEX_ATRIBUTOS_JSON = Pattern.compile("\"(.+?)\":\"(.*?)\","); // separa os atributos de cada array de filme
 
     public List<Map<String, String>> parse(String json) {
         Matcher matcher = REGEX_ITEMS.matcher(json);
@@ -17,7 +17,7 @@ public class JasonParser {
             throw new IllegalArgumentException("Não encontrou items.");
         }
 
-        String[] items = matcher.group(1).split("\\},\\{");
+        String[] items = matcher.group(1).split("\\},\\{"); //separa a coleção em cada array de filme
 
         List<Map<String, String>> dados = new ArrayList<>();
 
